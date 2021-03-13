@@ -27,10 +27,13 @@ class MyApp extends StatelessWidget {
           color: Colors.red[200],
           child: Center(
               child: Text(
-                'Hello, My name is jaekwun lee',
+                'Hello, My name is jaekwun lee\n'
+                '${(1+1).toString()} 텍스트 위젯',
                 style: TextStyle(
+                  fontFamily: 'NotoSansKR',
                   color: Colors.white,
-                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 24.0,
                 ),
               ),
           ),
