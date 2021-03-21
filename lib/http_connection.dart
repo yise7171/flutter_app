@@ -1,4 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert'; //json 연결
+
+// pubspec.yaml에 아래 기술하여 install
+// dependencies:
+//     http: ^0.13.0
+// install 방법
+// dart pub get
+// flutter pub get
+// import 방법
+// import 'package:http/http.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -19,19 +30,12 @@ class MyApp extends StatelessWidget {
         ],
       ),
       drawer: Drawer(),
-      body: Container(
-        color: Colors.red[200],
-        child: Center(
-          child: Text(
-            'Hello, My name is jaekwun lee\n'
-                '${(1+1).toString()} 텍스트 위젯',
-            style: TextStyle(
-              fontFamily: 'NotoSansKR',
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-              fontSize: 24.0,
-            ),
-          ),
+      body: Center(
+        child: FutureBuilder(
+          future: fetch(),
+          builder: (context, AsyncSnapshot snap){
+            return Text(snap.data.toString());
+          },
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -52,4 +56,11 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+Future fetch() async{
+  String url = "https://example.com";
+  // var res = await http.get(url);
+  // return json.decode(res.body);
+  return 0;
 }

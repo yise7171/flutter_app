@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/page_tut_sub.dart';
 
 class MyApp extends StatelessWidget {
+  String MainValue = "페이지이동";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,19 +21,18 @@ class MyApp extends StatelessWidget {
         ],
       ),
       drawer: Drawer(),
-      body: Container(
-        color: Colors.red[200],
-        child: Center(
-          child: Text(
-            'Hello, My name is jaekwun lee\n'
-                '${(1+1).toString()} 텍스트 위젯',
-            style: TextStyle(
-              fontFamily: 'NotoSansKR',
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-              fontSize: 24.0,
-            ),
-          ),
+      body: Center(
+        child: RaisedButton(
+          child: Text(this.MainValue),
+          onPressed: () async{
+            String backValue = await Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => PageTwo(data: "Value")
+              ),
+            );
+            print(backValue);
+          },
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -53,3 +54,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

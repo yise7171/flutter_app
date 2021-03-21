@@ -1,37 +1,36 @@
 import 'package:flutter/material.dart';
 
-class MyApp extends StatelessWidget {
+class PageTwo extends StatefulWidget {
+  String data;
+  PageTwo({@required this.data});
+
   @override
+  _PageTwoState createState() => _PageTwoState();
+}
+
+class _PageTwoState extends State<PageTwo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('AppBar'),
         centerTitle: true,
-        actions:<Widget> [
+        actions: <Widget>[
           IconButton(
             icon: Icon(Icons.favorite),
-            onPressed: (){},
+            onPressed: () {},
           ),
           IconButton(
             icon: Icon(Icons.favorite_border),
-            onPressed: (){},
+            onPressed: () {},
           )
         ],
       ),
-      drawer: Drawer(),
-      body: Container(
-        color: Colors.red[200],
-        child: Center(
-          child: Text(
-            'Hello, My name is jaekwun lee\n'
-                '${(1+1).toString()} 텍스트 위젯',
-            style: TextStyle(
-              fontFamily: 'NotoSansKR',
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-              fontSize: 24.0,
-            ),
-          ),
+      body: Center(
+        child: RaisedButton(
+          child: Text(widget.data.toString()),
+          onPressed: () {
+            Navigator.of(context).pop("BackValue");
+            },
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
