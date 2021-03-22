@@ -24,11 +24,18 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # HTTP 요청을위한 구성 가능한 다중 플랫폼
   http: ^0.13.0
+  # Flutter 애플리케이션에 대한 로컬 알림을 표시하고 예약하기위한 크로스 플랫폼 플러그인
   flutter_local_notifications: ^1.4.3
+  # 공식 iFrame 플레이어 API를 사용하여 인라인 YouTube 동영상을 재생하거나 스트리밍하기위한 Flutter 플러그인
   youtube_player_flutter: ^7.0.0+7
+  # 한국 우편 주소 검색
   kopo: ^0.1.3
+  # Android 및 iOS에서 WebView 위젯을 제공하는 Flutter 플러그인
   webview_flutter: ^1.0.1
+  # Android 및 iOS 이미지 라이브러리에서 이미지를 선택하고 카메라로 새 사진을 찍는 Flutter 플러그인
+  image_picker: ^0.7.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
