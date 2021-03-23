@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -36,6 +36,10 @@ dependencies:
   webview_flutter: ^1.0.1
   # Android 및 iOS 이미지 라이브러리에서 이미지를 선택하고 카메라로 새 사진을 찍는 Flutter 플러그인
   image_picker: ^0.7.3
+  # 플랫폼의 공유 대화 상자를 통해 Flutter 앱의 콘텐츠를 공유하는 Flutter 플러그인
+  share: ^0.6.5+4
+  # 이메일 작성, 전화걸기, SMS 메시지 보내기등
+  url_launcher: ^6.0.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
